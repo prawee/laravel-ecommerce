@@ -36,4 +36,10 @@ class StudentController extends Controller
 
         return redirect(route('home'))->with('successMsg', 'Student Successfully Added');
     }
+
+    public function edit($id)
+    {
+        $student = Students::find($id);
+        return view('edit', compact('student'));
+    }
 }
