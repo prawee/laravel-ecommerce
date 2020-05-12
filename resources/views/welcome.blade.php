@@ -30,7 +30,19 @@
                     <td>{{ $student->phone }}</td>
                     <td>
                         <a class="btn btn-raised btn-primary btn-sm" href="{{ route('edit', $student->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                        <a class="btn btn-raised btn-danger btn-sm" href=""><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                        <form method="post" id="delete-form-{{ $student->id }}" action="{{ route('delete', $student->id) }}" style="display: none;">
+                            {{ csrf_field() }}
+                            {{ method_field('delete') }}
+                        </form>
+                        <button onclick="if (confirm('Are you sure to delete this data?')) {
+                            event.preventDefault();
+                            document.getElementById('delete-form-{{ $student->id }}').submit();
+                        } else {
+                            event.preventDefault();
+                        }" class="btn btn-raised btn-danger btn-sm">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
                     </td>
                 </tr>
                 @endforeach
