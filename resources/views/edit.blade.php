@@ -48,7 +48,7 @@
             <!-- Newsletter -->
 
             <!-- Sign up button -->
-            <button class="btn btn-info my-4 btn-block" type="submit">Add Data</button>
+            <button class="btn btn-info my-4 btn-block" type="submit">Update Data</button>
 
             <!-- Social register -->
 
