@@ -12,6 +12,11 @@
 
 @section('content')
     <div class="container">
+        @if (session('errorMsg'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('errorMsg') }}
+            </div>
+        @endif
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -25,7 +30,7 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Old Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="oldpassword" type="text" class="form-control @error('oldpassword') is-invalid @enderror" name="oldpassword" value="{{ old('oldpassword') }}" required autocomplete="oldpassword" autofocus>
+                                    <input id="oldpassword" type="password" class="form-control @error('oldpassword') is-invalid @enderror" name="oldpassword" value="{{ old('oldpassword') }}" required autocomplete="oldpassword" autofocus>
 
                                     @error('oldpassword')
                                     <span class="invalid-feedback" role="alert">
