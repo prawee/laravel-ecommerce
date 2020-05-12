@@ -30,3 +30,7 @@ Route::get('/hello', function () {
 Route::get('/user/{id}', function ($id) {
     return "Your Id is ".$id;
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
